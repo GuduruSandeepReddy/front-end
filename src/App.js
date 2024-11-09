@@ -12,23 +12,23 @@ function App() {
       alert('Please select either Email or SMS');
       return;
     }
-
+  
     try {
-      const response = await fetch('https://your-backend-url.onrender.com/predict', {
-
+      const response = await fetch('https://backend-idfp.onrender.com/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ data: input, mode }),
       });
-
+  
       const data = await response.json();
       setResult(data.prediction);
     } catch (error) {
       console.error('Error:', error);
     }
   };
+  
 
   return (
     <div className="App">
